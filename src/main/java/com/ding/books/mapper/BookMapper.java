@@ -15,16 +15,11 @@ public interface BookMapper extends BaseMapper<Book> {
 
 
     Page<Book> selectByCondition( String queryString);
-    //int addBook(AddBook addBook);
 
-    //long findCountByBook(Integer id);
 
     void deleteById(Integer id);
 
 
-   //void edit(Book book);
-
-    //Book findById(Integer id);
 
     List<Book> findAllLimit();
 

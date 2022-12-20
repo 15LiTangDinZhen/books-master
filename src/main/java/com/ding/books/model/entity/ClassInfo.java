@@ -7,12 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * @Description 图书类别号
- * @Author 丁帅帅
- * @Date 21/12/23 09:13
- * @Version 1.0
- */
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

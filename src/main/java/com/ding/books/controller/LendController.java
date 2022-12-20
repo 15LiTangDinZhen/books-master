@@ -2,7 +2,7 @@ package com.ding.books.controller;
 
 import com.ding.books.model.dto.QueryPageBeanUsername;
 import com.ding.books.model.entity.LendRecord;
-import com.ding.books.model.vo.ExcelLend;
+
 import com.ding.books.service.LendService;
 import com.ding.books.utils.*;
 import org.springframework.beans.BeanUtils;
@@ -103,29 +103,7 @@ public class LendController {
         }
     }
 
-    @RequestMapping("/export")
-    public void export( HttpServletResponse response){
-        try{
 
-            List<LendRecord> list =lendService.findAll();
-            //System.out.println(list.toString());
-            String[] columnNames=new String[]{"lendid","bookid","userid","lenddate","backdate","number"};
-            String[] keys=new String[]{"lendid","书的编号","用户id","借书日期","应还日期","数量"};
-            List<ExcelLend> excelLends =new ArrayList<>();
-            for (LendRecord lendRecord : list) {
-                ExcelLend excelLend = new ExcelLend();
-                BeanUtils.copyProperties(lendRecord,excelLend);
-                excelLends.add(excelLend);
-            }
-
-            ExcelUtils.export(response,"借阅信息表",excelLends,columnNames,keys,"借阅信息");
-            //return  new Result(true, MessageConstant.EXPORT_SUCCESS);
-        }catch (Exception e){
-            e.printStackTrace();
-            //服务调用失败
-            //return new Result(false, MessageConstant.EXPORT_FAIL);
-        }
-    }
 
 
 

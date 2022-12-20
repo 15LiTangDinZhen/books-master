@@ -6,7 +6,6 @@ import com.ding.books.model.entity.Book;
 import com.ding.books.model.entity.CollectRecord;
 import com.ding.books.model.entity.LendRecord;
 import com.ding.books.model.entity.User;
-import com.ding.books.model.vo.ExcelBook;
 import com.ding.books.service.BookService;
 import com.ding.books.service.CollectService;
 import com.ding.books.service.LendService;
@@ -23,15 +22,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * @Description 图书
- * @Author 丁帅帅
- * @Date 21/12/09 23:21
- * @Version 1.0
- */
+
 @Slf4j
 @RestController
-//@RolesAllowed({"admin"})
 @RequestMapping("/book")
 public class BookController {
 
@@ -53,7 +46,7 @@ public class BookController {
      * @param bookid
      * @return
      */
-    //@PutMapping("/lend")
+
     @RequestMapping("/lend")
     public  Result lendBook(@RequestParam("bookid") Integer bookid,@RequestParam("username") String username){
         //System.out.println("------>"+username);
@@ -194,27 +187,5 @@ public class BookController {
 
 
 
-    @RequestMapping("/export")
-    public void export(HttpServletResponse response) {
-        try{
 
-            List<Book> list =bookService.findAll();
-            //System.out.println(list.toString());
-            String[] columnNames=new String[]{"bookid","bookname","author","publish","introduction","classid","number"};
-            String[] keys=new String[]{"图书号","图书名","作者","出版社","简介","类别号","数量"};
-            List<ExcelBook> excelBooks =new ArrayList<>();
-            for (Book book : list) {
-                ExcelBook excelBook = new ExcelBook();
-                BeanUtils.copyProperties(book,excelBook);
-                excelBooks.add(excelBook);
-            }
-
-            ExcelUtils.export(response,"图书信息表",excelBooks ,columnNames,keys,"图书信息");
-            //return  new Result(true, MessageConstant.EXPORT_SUCCESS);
-        }catch (Exception e){
-            e.printStackTrace();
-            //服务调用失败
-            //return new Result(false, MessageConstant.EXPORT_FAIL);
-        }
-    }
 }

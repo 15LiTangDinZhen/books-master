@@ -7,7 +7,7 @@
     <!-- 引入样式 -->
     <style>
         body {
-            background: url(https://api.lyiqk.cn/acg) no-repeat;
+            /*background: url(https://api.lyiqk.cn/acg) no-repeat;*/
             background-size: 100%;
         }
         .homepage-hero-module,
@@ -74,12 +74,8 @@
                         </el-form-item>
                         <el-form-item >
                                                    <el-button style="float: left" type="text" @click="judgeURL">前往注册 >> </el-button>
-                                                   <div  align="center" >
-                                                       <a href="LoginByQQ">
-                                                           <!--<img src ="https://wiki.connect.qq.com/wp-content/uploads/2016/12/Connect_logo_4.png"/>-->
-                                                          <img style="height: 23px" src ="https://wiki.connect.qq.com/wp-content/uploads/2013/10/03_qq_symbol-1-250x300.png"/>
-                                                           QQ登录</a>
-                                                   </div>
+                            <el-button style="float: left" type="text" @click="judgeURL2">管理员登录 >> </el-button>
+
                                                </el-form-item>
                     </el-form>
                 </div>
@@ -212,6 +208,9 @@
             },
             judgeURL () {
                 window.location.href="./register.html";
+            },
+            judgeURL2 (){
+                window.location.href="./admin_login.html";
             },
         }
     })

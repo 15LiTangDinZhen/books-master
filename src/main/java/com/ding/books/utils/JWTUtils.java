@@ -1,5 +1,6 @@
 package com.ding.books.utils;
 
+import com.ding.books.model.entity.Admin;
 import com.ding.books.model.entity.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -52,6 +53,20 @@ public class JWTUtils {
         String token = Jwts.builder().setSubject(SUBJECT)
                 .claim("id",user.getId())
                 .claim("name",user.getUsername())
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + EXPIRE))
+                .signWith(SignatureAlgorithm.HS256,SECRET).compact();
+
+        token = TOKEN_PREFIX + token;
+
+
+        return token;
+    }
+    public static String geneJsonWebToken(Admin admin){
+
+        String token = Jwts.builder().setSubject(SUBJECT)
+                .claim("id",admin.getAdmin_id())
+                .claim("name",admin.getUsername())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRE))
                 .signWith(SignatureAlgorithm.HS256,SECRET).compact();

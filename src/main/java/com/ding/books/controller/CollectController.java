@@ -3,7 +3,7 @@ package com.ding.books.controller;
 import com.ding.books.model.dto.QueryPageBeanUsername;
 import com.ding.books.model.entity.CollectRecord;
 import com.ding.books.model.entity.LendRecord;
-import com.ding.books.model.vo.ExcelCollect;
+
 import com.ding.books.service.CollectService;
 import com.ding.books.utils.*;
 import org.springframework.beans.BeanUtils;
@@ -77,29 +77,5 @@ public class CollectController {
 
 
 
-    @RequestMapping("/export")
-    public void export( HttpServletResponse response){
-        try{
-
-            List<CollectRecord> list =collectService.findAll();
-            //System.out.println(list.toString());
-            String[] columnNames=new String[]{"collectid","bookid","userid","lenddate"};
-            String[] keys=new String[]{"collectid","书的编号","用户id","收藏日期"};
-            List<ExcelCollect> excelCollects =new ArrayList<>();
-            for (CollectRecord collectRecord : list) {
-               // ExcelLend excelLend = new ExcelLend();
-                ExcelCollect excelCollect = new ExcelCollect();
-                BeanUtils.copyProperties(collectRecord,excelCollect);
-                excelCollects.add(excelCollect);
-            }
-
-            ExcelUtils.export(response,"收藏信息表",excelCollects,columnNames,keys,"收藏信息");
-            //return  new Result(true, MessageConstant.EXPORT_SUCCESS);
-        }catch (Exception e){
-            e.printStackTrace();
-            //服务调用失败
-            //return new Result(false, MessageConstant.EXPORT_FAIL);
-        }
-    }
 
 }

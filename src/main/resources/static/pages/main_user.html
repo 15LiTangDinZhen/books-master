@@ -25,15 +25,16 @@
 </head>
 <body class="hold-transition skin-purple sidebar-mini">
     <div id="app">
+
         <el-container>
             <el-header  class="main-header" style="height:70px;">
                 <nav class="navbar navbar-static-top" :class=''>
                     <!-- Logo -->
-                    <a href="https://www.cnblogs.com/dss-99/" class="logo" style="text-align:left">
+                    <a  class="logo" style="text-align:left">
                         <span style="font-family:Microsoft YaHei;font-size:25px">图书管理系统<!--<img src="../img/sdau.png"  style="text-align: left;height: 40px">--></span>
                     </a>
                     <div class="right-menu">
-                       <!-- <span class="help"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>帮助</span>-->
+
                         <el-dropdown class="avatar-container right-menu-item" trigger="click">
                             <div class="avatar-wrapper">
                                 <img :src="head_img" class="user-avatar">
@@ -51,6 +52,7 @@
                     </div>
                 </nav>
             </el-header>
+
             <el-container>
                 <el-aside width="width: 200px; min-height: calc(100vh - 50px)">
                     <el-menu>
@@ -67,10 +69,13 @@
                         </el-submenu>
                     </el-menu>
                 </el-aside>
+
                 <el-container>
-                    <iframe name="right" class="el-main" src="Echars.html" width="100%"  height="90%" frameborder="0"></iframe>
+                    <iframe name="right" class="el-main" src="lend_user.html" width="100%"  height="90%" frameborder="0"></iframe>
                 </el-container>
+
             </el-container>
+
         </el-container>
 
         <!-- 修改密码项 -->
@@ -122,34 +127,10 @@
         data:{
             name:"dss",
             head_img:"../img/touxiang.jpg",
-            //head_img:"http://thirdqq.qlogo.cn/g?b=oidb&k=L9iba1sibITr8vlnfjKAfzxQ&s=40&t=1566917162",
+
             menuList:[
 
-               /* {
-                    "path": "2",
-                    "title": "读者管理",
-                    "icon":"fa-user-md",
-                     "children": [
-                        {
-                            "path": "/2-1",
-                            "title": "读者档案",
-                            "linkUrl":"userList.html",
-                            "children":[]
-                        },
-                    {
-                       "path": "/2-2",
-                       "title": "读者测试",
-                        "linkUrl":"userList2.html",
-                       "children":[]
-                   },/!*
-                   {
-                       "path": "/2-3",
-                       "title": "图书列表",
-                       "linkUrl":"bookList_user.html",
-                       "children":[]
-                   },*!/
-               ]
-                },*/
+
                 {
                     "path": "3",
                     "title": "图书管理",
@@ -173,17 +154,18 @@
                             "linkUrl":"bookList_admin.html",
                             "children":[]
                         },*/
-                       {
-                            "path": "/3-4",
-                            "title": "分类信息",
-                            "linkUrl":"classinfo.html",
-                            "children":[]
-                        },{
-                            "path": "/3-5",
-                            "title": "图书数量",
-                            "linkUrl":"Echars.html",
-                            "children":[]
-                        },
+                       // {
+                       //      "path": "/3-4",
+                       //      "title": "分类信息",
+                       //      "linkUrl":"classinfo.html",
+                       //      "children":[]
+                       //  },
+                       //  {
+                       //      "path": "/3-5",
+                       //      "title": "图书数量",
+                       //      "linkUrl":"Echars.html",
+                       //      "children":[]
+                       //  },
                     ]
                 },
                 {
@@ -191,12 +173,14 @@
                     "title": "借还管理",
                     "icon":"fa-pencil",
                     "children":[
+
                         /*{
                             "path": "/4-1",
                             "title": "借还记录管理员",
                             "linkUrl":"lend_admin.html",
                             "children":[]
                         },*/
+
                         {
                             "path": "/4-2",
                             "title": "借还记录",
@@ -210,12 +194,14 @@
                     "title": "收藏管理",     //菜单项名称
                     "icon":"fa-cog",
                     "children":[//是否有子菜单，若没有，则为[]
+
                        /* {
                             "path": "/5-1",
                             "title": "收藏管理管理员",
                             "linkUrl":"collect_admin.html",
                             "children":[]
                         },*/
+
                         {
                             "path": "/5-2",
                             "title": "收藏管理",
@@ -263,23 +249,21 @@
             formData: {},//表单数据
         },
         create(){
-            //var item = window.localStorage.getItem("username");
-            //this.changename(item);
+
         },
         mounted(){
             var item = window.localStorage.getItem("username");
-            //alert(1111);
-            //alert(item);
+
             if (!item){
                 //alert(2222);
                 var s = this.GetQueryString("username");
                 localStorage.setItem("username", s);
                 var s2 = this.GetQueryString("head_img");
-               // alert(s);
+
                 this.formData.username=s;
 
                 this.changename(s);
-                //alert(s2);
+
                 this.changehead_img(s2);
 
             }
@@ -288,15 +272,13 @@
                 this.formData.username=item;
                 this.changename(item);
             }
-           //alert("zhong")
+
         },
         methods:{
 
             GetQueryString(key)
             {
-                /*var reg = new RegExp("(^|&)"+ decodeURI(decodeURI(name)) +"=([^&]*)(&|$)");
-                var r = window.location.search.substr(1).match(reg);
-                if(r!=null)return  unescape(r[2]); return null;*/
+
                 // 获取参数
                 var url = window.location.search;
                 // 正则筛选地址栏

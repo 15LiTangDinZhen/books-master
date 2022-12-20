@@ -6,9 +6,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * @Description 自定义异常类
- * @Author 丁帅帅
- * @Date 21/12/24 08:15
- * @Version 1.0
+
  */
 @Data
 @NoArgsConstructor

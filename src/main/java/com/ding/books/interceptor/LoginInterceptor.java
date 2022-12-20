@@ -9,12 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
-/**
- * @Description TODO
- * @Author 丁帅帅
- * @Date 21/12/09 22:11
- * @Version 1.0
- */
+
 public class LoginInterceptor implements HandlerInterceptor {
 
     @Override

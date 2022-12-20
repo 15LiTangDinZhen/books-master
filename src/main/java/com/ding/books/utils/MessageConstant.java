@@ -1,11 +1,6 @@
 package com.ding.books.utils;
 
-/**
- * @Description TODO
- * @Author 丁帅帅
- * @Date 21/12/09 23:39
- * @Version 1.0
- */
+
 public class MessageConstant {
 
     public static final String LEND_BOOK_SUCCESS = "借阅成功";
@@ -38,9 +33,13 @@ public class MessageConstant {
     public static final String Register_User_FAIL = "注册用户失败";
     public static final String Register_User_SUCCESS = "注册用户成功";
 
+
     public static final String Login_User_FAIL = "登录失败,请检查账号或密码!!!";
     public static final String Login_User_SUCCESS = "登录成功";
 
+    public static final String Login_Admin_FAIL = "admin登录失败,请检查账号或密码!!!";
+
+    public static final String Login_Admin_SUCCESS = "admin登录成功";
     public static final String Logout_User_SUCCESS = "退出成功";
     public static final String Logout_User_FAIL = "退出失败";
 

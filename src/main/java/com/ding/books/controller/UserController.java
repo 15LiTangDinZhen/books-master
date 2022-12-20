@@ -7,7 +7,7 @@ import com.ding.books.model.dto.EditUserRequest;
 import com.ding.books.model.dto.LoginRequest;
 import com.ding.books.model.dto.Updatepwd;
 import com.ding.books.model.entity.User;
-import com.ding.books.model.vo.ExcelUser;
+
 import com.ding.books.service.UserService;
 import com.ding.books.utils.*;
 import lombok.extern.slf4j.Slf4j;
@@ -49,7 +49,7 @@ public class UserController {
           BeanUtils.copyProperties(user,userRequest);
           edit(userRequest);
           throw new MyException(true,"修改成功");
-           // return new Result(true,"修改成功");
+
         }
 
         return new Result(false,"修改失败,请检查原密码是否正确");
@@ -73,13 +73,13 @@ public class UserController {
     }
 
 
-   // @PreAuthorize("hasAnyRole('admin')")
+
     @RequestMapping("/login")
     public Result login(@RequestBody LoginRequest loginRequest, HttpSession session){
 
         String token = userService.findByPhoneAndPwd(loginRequest.getUsername(), loginRequest.getPassword());
         session.setAttribute("token",token);
-        //System.out.println(" request.setAttribute(\"token\",token);"+token);
+
         if (token == null) {
             logger.info("登录"+MessageConstant.Login_User_FAIL);
              return new Result(false, MessageConstant.Login_User_FAIL,token);
@@ -91,6 +91,8 @@ public class UserController {
 
     }
 
+
+
     /**
      * 退出
      * @return
@@ -99,11 +101,9 @@ public class UserController {
     public Result logout(HttpServletRequest request){
 
         if (true) {
-           // Object token = request.getSession().getAttribute("token");
-           // log.info("token1{}"+token);
+
             request.getSession().removeAttribute("token");
-           // Object token1 = request.getSession().getAttribute("token");
-           // log.info("token{}"+token1);
+
             return new Result(true, MessageConstant.Logout_User_SUCCESS);
         } else {
             return  new Result(false, MessageConstant.Logout_User_FAIL);
@@ -184,29 +184,7 @@ public class UserController {
         }
     }
 
-    @RequestMapping("/export")
-    public void export( HttpServletResponse response){
-        try{
 
-            List<User> list =userService.findAll();
-            //System.out.println(list.toString());
-            String[] columnNames=new String[]{"id","username","sex","phone","city"};
-            String[] keys=new String[]{"id","姓名","性别","手机","城市"};
-            List<ExcelUser> excelUsers =new ArrayList<>();
-            for (User user : list) {
-                ExcelUser excelUser = new ExcelUser();
-                BeanUtils.copyProperties(user,excelUser);
-                excelUsers.add(excelUser);
-            }
-
-            ExcelUtils.export(response,"用户信息表",excelUsers,columnNames,keys,"用户信息");
-            //return  new Result(true, MessageConstant.EXPORT_SUCCESS);
-        }catch (Exception e){
-            e.printStackTrace();
-            //服务调用失败
-            //return new Result(false, MessageConstant.EXPORT_FAIL);
-        }
-    }
 
     @RequestMapping("/findAll")
     public Result findAll(HttpServletResponse response){

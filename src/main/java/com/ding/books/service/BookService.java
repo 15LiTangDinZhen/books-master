@@ -10,12 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * @Description TODO
- * @Author 丁帅帅
- * @Date 21/12/09 23:25
- * @Version 1.0
- */
+
 //@Transactional(readOnly = true)
 @Transactional
 @Service
@@ -26,10 +21,7 @@ public interface BookService {
     void deleteById(Integer id);
 
 
-   // Book findById(Integer id);
 
-
- // @Transactional(readOnly = false)
  int addBook(AddBook addBook);
 
  Book findBookById(Integer bookid);

@@ -4,12 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * @Description TODO
- * @Author 丁帅帅
- * @Date 21/12/17 15:19
- * @Version 1.0
- */
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

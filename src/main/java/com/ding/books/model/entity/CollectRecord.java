@@ -10,12 +10,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * @Description 收藏表
- * @Author 丁帅帅
- * @Date 21/12/22 16:38
- * @Version 1.0
- */
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

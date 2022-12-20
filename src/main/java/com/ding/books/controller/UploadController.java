@@ -14,12 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-/**
- * @Description TODO
- * @Author 丁帅帅
- * @Date 21/12/24 22:33
- * @Version 1.0
- */
+
 
 @RestController
 public class UploadController {

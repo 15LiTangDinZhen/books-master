@@ -10,12 +10,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * @Description TODO
- * @Author 丁帅帅
- * @Date 21/12/19 17:44
- * @Version 1.0
- */
 
 @Mapper
 @Repository

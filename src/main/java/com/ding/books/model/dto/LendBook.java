@@ -8,12 +8,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * @Description value = {"hibernateLazyInitializer", "handler"}
- * @Author 丁帅帅
- * @Date 21/12/19 17:12
- * @Version 1.0
- */
+
 //@JsonIgnoreProperties(value = {"lisi", "wang"})
 
 

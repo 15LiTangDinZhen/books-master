@@ -1,7 +1,7 @@
 package com.ding.books.controller;
 
 import com.ding.books.model.entity.ClassInfo;
-import com.ding.books.model.vo.ExcelClass;
+
 import com.ding.books.service.ClassService;
 import com.ding.books.utils.ExcelUtils;
 import com.ding.books.utils.PageResult;
@@ -47,27 +47,5 @@ public class ClassController {
 
 
 
-    @RequestMapping("/export")
-    public void export( HttpServletResponse response){
-        try{
 
-            List<ClassInfo> list =classService.findAll();
-            //System.out.println(list.toString());
-            String[] columnNames=new String[]{"id","classid","classname"};
-            String[] keys=new String[]{"id","类别号","类别名"};
-            List<ExcelClass> excelClasses =new ArrayList<>();
-            for (ClassInfo classInfo : list) {
-                ExcelClass excelClass = new ExcelClass();
-                BeanUtils.copyProperties(classInfo,excelClass);
-                excelClasses.add(excelClass);
-            }
-
-            ExcelUtils.export(response,"分类信息表",list,columnNames,keys,"图书类别信息");
-            //return  new Result(true, MessageConstant.EXPORT_SUCCESS);
-        }catch (Exception e){
-            e.printStackTrace();
-            //服务调用失败
-            //return new Result(false, MessageConstant.EXPORT_FAIL);
-        }
-    }
 }

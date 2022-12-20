@@ -9,10 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @Description 全局异常
- * @Author 丁帅帅
- * @Date 21/12/24 00:39
- * @Version 1.0
- */
+*/
 @RestControllerAdvice
 @Slf4j
 public class CustomExtHandler {
