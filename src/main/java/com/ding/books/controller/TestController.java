@@ -14,12 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @Description 测试下Echars
- * @Author 丁帅帅
- * @Date 21/12/24 07:43
- * @Version 1.0
- */
+
 @RestController
 @RequestMapping("/test")
 public class TestController {

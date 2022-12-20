@@ -8,12 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * @Description TODO
- * @Author 丁帅帅
- * @Date 21/12/19 17:48
- * @Version 1.0
- */
+
 @Service
 public interface LendService {
     PageResult pageQuery(QueryPageBean queryPageBean);

@@ -15,12 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @Description TODO
- * @Author 丁帅帅
- * @Date 21/12/19 17:05
- * @Version 1.0
- */
+
 @RestController
 @RequestMapping("/lend")
 public class LendController {

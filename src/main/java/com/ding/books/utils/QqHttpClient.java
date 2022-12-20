@@ -11,12 +11,7 @@ import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 
-/**
- * @Description TODO
- * @Author 丁帅帅
- * @Date 21/11/21 09:38
- * @Version 1.0
- */
+
 public class QqHttpClient {
 
 

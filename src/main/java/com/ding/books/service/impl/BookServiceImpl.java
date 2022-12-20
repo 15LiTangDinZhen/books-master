@@ -18,12 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * @Description TODO
- * @Author 丁帅帅
- * @Date 21/12/09 23:26
- * @Version 1.0
- */
+
 @Transactional
 @Service
 public class BookServiceImpl implements BookService {

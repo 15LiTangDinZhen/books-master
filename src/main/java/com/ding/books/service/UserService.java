@@ -9,12 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * @Description TODO
- * @Author 丁帅帅
- * @Date 21/12/11 16:23
- * @Version 1.0
- */
+
 @Service
 public interface UserService {
    int addUser(AddUserRequest user);
